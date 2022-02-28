@@ -1,1 +1,1 @@
-# cipher met danks aan de tering lijer genaamt Bas B. DANKJEWEL JEROENTJE
+#Self made encryption tool, not usable for any real crypthographic uses
