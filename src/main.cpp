@@ -5,21 +5,24 @@ using namespace std;
 using std::ifstream;
 
 
-
 int main() {
-    ifstream infile;
-    int num;
-    infile >> hex >> num;
-    infile.open("../imageFiles/formattedBlackImageHex");
-    if(!infile) {
-        cerr << "Error: infile could not be opened" << endl;
+    ifstream inFile;
+    string currentLineData;
+    string data;
+    inFile.open("../imageFiles/formattedBlackImageHex");
+    if(!inFile) {
+        cerr << "Error: file could not be opened" << endl;
         exit(1);
     }
-    infile >> hex >> num;
-    while(!infile.eof()){
-        cout << "the next group of 2 hexdigits is " << num << hex << endl;
-        infile >> num;
+
+
+    inFile >> hex >> currentLineData;
+    while(!inFile.eof()) {
+        data.append(currentLineData);
+        cout << hex << "the next group of 2 hexdigits is " << currentLineData << endl;
+        inFile >> currentLineData;
     }
-    infile.close();
+    inFile.close();
+    //cout << data << endl;
     cout << "EoF reached.." << endl;
 }
